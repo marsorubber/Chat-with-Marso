@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MARSO - Landing Page</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        /* --- Global Reset & Variables --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --brand-red: #E3000F;
+            --brand-red-dark: #B2000C;
+            --brand-white: #FFFFFF;
+            --bg-light: #FFF5F5;
+            --bg-gradient: linear-gradient(135deg, #ffffff 0%, #ffe6e6 100%);
+            --text-dark: #333333;
+            --shadow: 0 10px 30px rgba(227, 0, 15, 0.2);
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: var(--bg-gradient);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: var(--text-dark);
+            padding: 20px;
+        }
+
+        /* --- Main Container --- */
+        .container {
+            max-width: 1200px;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            border-radius: 40px;
+            padding: 40px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.05);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            border: 1px solid rgba(227, 0, 15, 0.1);
+        }
+
+        /* --- Logo Section (FIXED) --- */
+        .logo-wrapper {
+            width: 100%;
+            max-width: 500px;
+            margin-bottom: 30px;
+            display: flex;           /* Added to center image */
+            justify-content: center; /* Added to center image */
+            transition: transform 0.3s ease;
+        }
+
+        .logo-wrapper img {
+            width: 100%;
+            max-width: 400px;       /* Controls maximum logo size */
+            height: auto;
+            display: block;         /* Removes extra space under image */
+        }
+
+        .logo-wrapper:hover {
+            transform: scale(1.02);
+        }
+
+        /* --- Content Section --- */
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: var(--text-dark);
+            margin-bottom: 15px;
+            letter-spacing: -0.5px;
+        }
+
+        .highlight {
+            color: var(--brand-red);
+            position: relative;
+        }
+
+        p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            max-width: 600px;
+            margin: 0 auto 40px auto;
+            color: #666;
+            font-weight: 400;
+        }
+
+        /* --- Button Section --- */
+        .btn-container {
+            position: relative;
+            z-index: 10;
+        }
+
+        .btn-marso {
+            display: inline-block;
+            background-color: var(--brand-red);
+            color: var(--brand-white);
+            font-size: 1.2rem;
+            font-weight: 700;
+            padding: 18px 50px;
+            border-radius: 50px;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .btn-marso:hover {
+            background-color: var(--brand-white);
+            color: var(--brand-red);
+            border: 2px solid var(--brand-red);
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(227, 0, 15, 0.3);
+        }
+
+        .btn-marso:active {
+            transform: translateY(0);
+        }
+
+        /* --- Footer / Decorative Elements --- */
+        .footer-note {
+            margin-top: 50px;
+            font-size: 0.8rem;
+            color: #aaa;
+            border-top: 1px solid #eee;
+            padding-top: 20px;
+            width: 100%;
+        }
+
+        /* --- Decorative Circles (Brand Accents) --- */
+        .bg-circle {
+            position: fixed;
+            border-radius: 50%;
+            z-index: -1;
+            opacity: 0.1;
+            background-color: var(--brand-red);
+        }
+        
+        .circle-1 {
+            width: 300px;
+            height: 300px;
+            top: -50px;
+            right: -50px;
+        }
+        
+        .circle-2 {
+            width: 200px;
+            height: 200px;
+            bottom: -50px;
+            left: -50px;
+        }
+
+        /* --- Responsive Design (Phone) --- */
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+                border-radius: 25px;
+                margin: 10px;
+            }
+
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            p {
+                font-size: 1rem;
+                margin-bottom: 30px;
+            }
+
+            .btn-marso {
+                width: 100%;
+                padding: 16px 20px;
+                font-size: 1.1rem;
+                box-sizing: border-box;
+                text-align: center;
+            }
+
+            .logo-wrapper img {
+                max-width: 250px; /* Smaller logo on mobile */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Background Accents -->
+    <div class="bg-circle circle-1"></div>
+    <div class="bg-circle circle-2"></div>
+
+    <div class="container">
+        <!-- Logo (Fixed) -->
+        <div class="logo-wrapper">
+            <img src="thelogo.png" alt="MARSO Logo">
+        </div>
+
+        <!-- Headline -->
+        <h1>
+            Welcome to <span class="highlight">MARSO</span>
+        </h1>
+
+        <!-- Subtext -->
+        <p>
+            Connecting you to excellence. Experience seamless service and support 
+            tailored to your needs. Let's get started.
+        </p>
+
+        <!-- Action Button -->
+        <div class="btn-container">
+            <a href="https://gemini.google.com/gem/1x9E04edQK73Ie-nJnQbop81z4wwluh1Q?usp=sharing" 
+               class="btn-marso" 
+               target="_blank">
+               Chat with MARSO
+            </a>
+        </div>
+
+        <div class="footer-note">
+            &copy; 2026 MARSO. All rights reserved.
+        </div>
+    </div>
+
+</body>
+</html>
